@@ -1,0 +1,57 @@
+/* Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Hind Siliguri";
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #fff;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+.grid {
+  display: grid;
+}
+
+.container {
+  max-width: 127rem !important;
+  margin: 0 auto !important;
+  /* padding: 2.4rem 0; */
+}
+.cart-container {
+  max-width: 100rem !important;
+  margin: 0 auto !important;
+  /* padding: 2.4rem 0; */
+}
+
+/*! 🔧 Plain CSS ক্লাস */
+/* .title-custom {
+  font-size: 24px;
+  color: #ff6600;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+} */
+
+/*! 🔧 Tailwind + Plain CSS মিশিয়ে কাস্টম ক্লাস */
+/* .btn-mixed {
+  @apply bg-green-600 text-white px-4 py-2 rounded;
+  border: 2px solid #004400;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+} */
