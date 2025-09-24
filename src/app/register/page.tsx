@@ -106,7 +106,7 @@ const page = () => {
 
               <button
                 type="submit"
-                className="w-full bg-[#008800] border-none outline-none text-[#fff] text-[1.8rem] py-[1rem] rounded-[.5rem]"
+                className="w-full bg-[#008800] border-none outline-none text-[#fff] text-[1.8rem] py-[1rem] rounded-[.5rem] cursor-pointer"
               >
                 Join
               </button>

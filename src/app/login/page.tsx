@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import logo from "@/images/logo.png";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const page = () => {
   // TypeScript safe fix
@@ -11,10 +12,18 @@ const page = () => {
 
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
+  const router = useRouter();
 
   useEffect(() => {
     clearMessage(); // পেজ লোড হলে message reset
   }, []);
+
+  //? IF USER LOGIN SUCCESSFULLY REDIRECT TO HOME PAGE
+  useEffect(() => {
+    if (authUser) {
+      router.push("/");
+    }
+  }, [authUser, router]);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -90,7 +99,7 @@ const page = () => {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-[#008800] border-none outline-none text-[#fff] text-[1.8rem] py-[1rem] rounded-[.5rem]"
+                className="w-full bg-[#008800] border-none outline-none text-[#fff] text-[1.8rem] py-[1rem] rounded-[.5rem] cursor-pointer"
               >
                 Log In
               </button>

@@ -115,18 +115,18 @@ const page = () => {
                   <div className="flex gap-[1rem]">
                     <Link
                       href={"#"}
-                      className="flex items-center justify-center bg-[#D1D5DB] w-full text-black text-[1.7rem] py-[1rem] mt-[6rem] rounded-l-[.5rem]"
+                      className="flex items-center justify-center bg-[#D1D5DB] w-full text-black text-[1.7rem] py-[1rem] mt-[6rem] rounded-l-[.5rem] cursor-pointer"
                     >
-                      <button className="bg-transparent border-none">
+                      <button className="bg-transparent border-none cursor-pointer">
                         পিছনে যান
                       </button>
                     </Link>
 
                     <div
                       onClick={handleNextStep1}
-                      className="flex items-center justify-center bg-[#86BC42] w-full text-[1.7rem] py-[1rem] mt-[6rem] rounded-r-[.5rem]"
+                      className="flex items-center justify-center bg-[#86BC42] w-full text-[1.7rem] py-[1rem] mt-[6rem] rounded-r-[.5rem] cursor-pointer"
                     >
-                      <button className="bg-transparent border-none text-[#fff]">
+                      <button className="bg-transparent border-none text-[#fff] cursor-pointer">
                         এগিয়ে যান
                       </button>
                     </div>
@@ -226,18 +226,18 @@ const page = () => {
                   <div className="flex gap-[1rem]">
                     <div
                       onClick={() => setStep(1)}
-                      className="flex items-center justify-center bg-[#D1D5DB] w-full text-black text-[1.7rem] py-[1rem] mt-[6rem] rounded-l-[.5rem]"
+                      className="flex items-center justify-center bg-[#D1D5DB] w-full text-black text-[1.7rem] py-[1rem] mt-[6rem] rounded-l-[.5rem] cursor-pointer"
                     >
-                      <button className="bg-transparent border-none">
+                      <button className="bg-transparent border-none cursor-pointer">
                         পিছনে যান
                       </button>
                     </div>
 
                     <div
                       onClick={handleNext}
-                      className="flex items-center justify-center bg-[#86BC42] w-full text-[1.7rem] py-[1rem] mt-[6rem] rounded-r-[.5rem]"
+                      className="flex items-center justify-center bg-[#86BC42] w-full text-[1.7rem] py-[1rem] mt-[6rem] rounded-r-[.5rem] cursor-pointer"
                     >
-                      <button className="bg-transparent border-none text-[#fff]">
+                      <button className="bg-transparent border-none text-[#fff] cursor-pointer">
                         এগিয়ে যান
                       </button>
                     </div>

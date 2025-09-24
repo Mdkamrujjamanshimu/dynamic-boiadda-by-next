@@ -58,7 +58,7 @@ const page = () => {
               </div>
               <hr />
               <Link href={"/checkout"}>
-                <button className="bg-[#86BC42] w-full text-white text-[1.7rem] text-[#fff] py-[1rem] rounded-[.5rem] border-none mt-[6rem]">
+                <button className="bg-[#86BC42] w-full text-white text-[1.7rem] text-[#fff] py-[1rem] rounded-[.5rem] border-none mt-[6rem] cursor-pointer">
                   এগিয়ে যান
                 </button>
               </Link>

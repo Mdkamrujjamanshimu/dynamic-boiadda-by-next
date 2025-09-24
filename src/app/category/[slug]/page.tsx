@@ -5,6 +5,7 @@ import CategoryRight from "@/components/CategoryRight";
 import { useProductContext } from "@/context/ProductContext";
 import { useParams } from "next/navigation";
 import React from "react";
+import { Toaster } from "react-hot-toast";
 import { BiChevronDown } from "react-icons/bi";
 
 const page = () => {
@@ -24,6 +25,23 @@ const page = () => {
 
   return (
     <div>
+      <Toaster
+        position="top-right"
+        toastOptions={{
+          duration: 4000,
+          style: {
+            background: "#16A34A",
+            color: "#fff",
+            fontSize: "2rem",
+            padding: "1rem 3rem 1rem 1rem", // right padding বেশি দিলাম cross icon জন্য
+            borderRadius: "0.5rem",
+            maxWidth: "400px", // crop এড়াতে
+            overflow: "visible", // icon visible রাখার জন্য
+            boxSizing: "border-box",
+          },
+          icon: "✅",
+        }}
+      />
       <div className="my-[10rem] container p-[2rem]">
         <div className="flex justify-between text-[#1F2937] py-[1rem]">
           <div className="">

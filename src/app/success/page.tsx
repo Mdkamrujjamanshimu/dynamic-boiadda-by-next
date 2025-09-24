@@ -18,7 +18,7 @@ const page = () => {
           </Link>
         </p>
         <Link href={"/"}>
-          <button className="bg-[#22C55E] border-none outline-none p-[1rem] text-[1.8rem] text-[#fff] rounded-[.5rem]">
+          <button className="bg-[#22C55E] border-none outline-none p-[1rem] text-[1.8rem] text-[#fff] rounded-[.5rem] cursor-pointer">
             Return Home
           </button>
         </Link>

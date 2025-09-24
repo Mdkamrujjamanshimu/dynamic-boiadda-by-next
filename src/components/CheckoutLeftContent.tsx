@@ -1,8 +1,28 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { useAuth } from "@/context/AuthContext";
 
-const CheckoutLeftContent = ({ setDeliveryData }:any) => {
+const CheckoutLeftContent = ({ setDeliveryData }: any) => {
+  const { authUser } = useAuth() as any;
+
   const [selectedArea, setSelectedArea] = useState("outside");
+
+  const [formData, setFormData] = useState({
+    phone: "",
+    name: "",
+    address: "",
+  });
+
+  // AuthUser থেকে auto fill করা
+  useEffect(() => {
+    if (authUser) {
+      setFormData({
+        phone: authUser.phone || "",
+        name: authUser.name || "",
+        address: authUser.address || "",
+      });
+    }
+  }, [authUser]);
 
   const getDeliveryInfo = (area: string) => {
     if (area === "outside") {
@@ -19,6 +39,7 @@ const CheckoutLeftContent = ({ setDeliveryData }:any) => {
 
   return (
     <div className="flex flex-col gap-[1rem]">
+      {/* Phone */}
       <div className="relative pt-[2rem]">
         <span className="absolute top-[1.2rem] left-[1rem] text-[1.4rem] text-[#111827] bg-[#fff] px-[.5rem]">
           ফোন নম্বর
@@ -27,6 +48,10 @@ const CheckoutLeftContent = ({ setDeliveryData }:any) => {
           <input
             type="text"
             id="phone"
+            value={formData.phone}
+            onChange={(e) =>
+              setFormData({ ...formData, phone: e.target.value })
+            }
             placeholder="Enter Phone"
             required
             className="w-full mt-[1rem] outline-none border-none p-[1rem]"
@@ -34,6 +59,7 @@ const CheckoutLeftContent = ({ setDeliveryData }:any) => {
         </div>
       </div>
 
+      {/* Name */}
       <div className="relative pt-[2rem]">
         <span className="absolute top-[1.2rem] left-[1rem] text-[1.4rem] text-[#111827] bg-[#fff] px-[.5rem]">
           নাম
@@ -42,6 +68,8 @@ const CheckoutLeftContent = ({ setDeliveryData }:any) => {
           <input
             type="text"
             id="name"
+            value={formData.name}
+            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             placeholder="Enter Name"
             required
             className="w-full mt-[1rem] outline-none border-none p-[1rem]"
@@ -49,6 +77,7 @@ const CheckoutLeftContent = ({ setDeliveryData }:any) => {
         </div>
       </div>
 
+      {/* Address */}
       <div className="relative pt-[2rem]">
         <span className="absolute top-[1.2rem] left-[1rem] text-[1.4rem] text-[#111827] bg-[#fff] px-[.5rem]">
           ঠিকানা
@@ -56,6 +85,10 @@ const CheckoutLeftContent = ({ setDeliveryData }:any) => {
         <div className="border-[.1rem] border-[#44d9db] rounded-[.5rem] text-[1.5rem]">
           <textarea
             id="address"
+            value={formData.address}
+            onChange={(e) =>
+              setFormData({ ...formData, address: e.target.value })
+            }
             placeholder="Enter Address"
             required
             className="w-full outline-none border-none p-[1rem]"
@@ -63,6 +96,7 @@ const CheckoutLeftContent = ({ setDeliveryData }:any) => {
         </div>
       </div>
 
+      {/* Area Selection */}
       <div className="mt-[2rem]">
         <h2 className="text-[1.5rem] py-[1rem]">এরিয়া সিলেক্ট করুন</h2>
 
