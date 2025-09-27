@@ -2,16 +2,14 @@
 import React, { useEffect, useState } from "react";
 import { useAuth } from "@/context/AuthContext";
 
-const CheckoutLeftContent = ({ setDeliveryData }: any) => {
+const CheckoutLeftContent = ({
+  setDeliveryData,
+  formData,
+  setFormData,
+}: any) => {
   const { authUser } = useAuth() as any;
 
   const [selectedArea, setSelectedArea] = useState("outside");
-
-  const [formData, setFormData] = useState({
-    phone: "",
-    name: "",
-    address: "",
-  });
 
   // AuthUser থেকে auto fill করা
   useEffect(() => {

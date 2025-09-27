@@ -1,8 +1,15 @@
 "use client";
+import { useCartContext } from "@/context/CartContext";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 
 const page = () => {
+  const { clearCart } = useCartContext() as any;
+
+  useEffect(() => {
+    clearCart();
+  }, []);
+
   return (
     <div className="cart-container flex justify-center items-center py-[10rem]">
       <div className="bg-[#F3F4F6] flex flex-col justify-center items-center text-center gap-[2rem] p-[4rem] rounded-[1rem]">
@@ -10,8 +17,8 @@ const page = () => {
           আপনার অর্ডারটি গ্রহণ করা হয়েছে। আমাদের সাথে থাকার জন্য ধন্যবাদ।
         </h1>
         <p className="text-[2rem]">
-          To Track Your Order, Please{" "}
-          <Link href={"/"}>
+          To Track Your Order, Please
+          <Link href={"/order"}>
             <span className="text-[#22C55E] underline cursor-pointer">
               Click Here
             </span>

@@ -9,7 +9,8 @@ import toast, { Toaster } from "react-hot-toast";
 
 const page = () => {
   // TypeScript fix
-  const { total_item, discounted_price, total_price } = useCartContext() as any;
+  const { cart, total_item, discounted_price, total_price } =
+    useCartContext() as any;
   const { authUser } = useAuth() as any;
 
   const [selectedArea, setSelectedArea] = useState("outside");
@@ -18,6 +19,11 @@ const page = () => {
   const [deliveryData, setDeliveryData] = useState({
     areaText: "ঢাকা সিটির বাহিরে ১০০/- টাকা",
     charge: 100,
+  });
+  const [formData, setFormData] = useState({
+    phone: "",
+    name: "",
+    address: "",
   });
 
   const grandTotal = discounted_price + deliveryData.charge;
@@ -30,6 +36,27 @@ const page = () => {
       setErrorMessage("Please login first");
       return;
     }
+
+    const orderData = {
+      items: cart,
+      total: discounted_price,
+      deliveryCharge: deliveryData.charge,
+      grandTotal,
+      user: authUser,
+      customerInfo: formData,
+      date: new Date().toLocaleString(),
+    };
+
+    const existingOrders = JSON.parse(localStorage.getItem("orders") || "[]");
+
+    const ordersArray = Array.isArray(existingOrders)
+      ? existingOrders
+      : [existingOrders];
+
+    const updatedOrders = [...ordersArray, orderData];
+
+    localStorage.setItem("orders", JSON.stringify(updatedOrders));
+
     router.push("/success");
   };
 
@@ -82,7 +109,11 @@ const page = () => {
             </div>
             <div className="flex max-[1023px]:grid gap-[3rem]">
               <div className="w-[65%] max-[1023px]:w-full">
-                <CheckoutLeftContent setDeliveryData={setDeliveryData} />
+                <CheckoutLeftContent
+                  setDeliveryData={setDeliveryData}
+                  formData={formData}
+                  setFormData={setFormData}
+                />
               </div>
               <div className="w-[35%] max-[1023px]:w-full mt-[2rem]">
                 <div className="border-[.1rem] border-[#44d9db] p-[1rem] rounded-[.5rem]">

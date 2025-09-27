@@ -1,5 +1,11 @@
 "use client";
-import { createContext, useContext, useEffect, useReducer } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useReducer,
+  useState,
+} from "react";
 import reducer from "@/reducer/authReducer";
 
 const AuthContext = createContext<any>(null);
@@ -12,6 +18,7 @@ const initialState = {
 
 const AuthProvider = ({ children }: any) => {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const [loading, setLoading] = useState(true);
 
   // ?   REGISTRATION FUNCTION
   const register = (user: any) => {
@@ -53,14 +60,14 @@ const AuthProvider = ({ children }: any) => {
     }
 
     dispatch({ type: "SET_AUTH_USER", payload: user });
-    localStorage.setItem("authUser", JSON.stringify(user));
+    sessionStorage.setItem("authUser", JSON.stringify(user));
     dispatch({ type: "SET_MESSAGE", payload: "Login successful!" });
   };
 
   // ?   LOGOUT FUNCTION
   const logout = () => {
     dispatch({ type: "SET_AUTH_USER", payload: null });
-    localStorage.removeItem("authUser");
+    sessionStorage.removeItem("authUser");
     dispatch({ type: "SET_MESSAGE", payload: "Logout successful!" });
   };
 
@@ -71,21 +78,21 @@ const AuthProvider = ({ children }: any) => {
 
   // ?   LOAD DATA FROM LOCAL STORAGE (useEffect)
   useEffect(() => {
-    // ✅ SSR safe check
     if (typeof window !== "undefined") {
       const storedUsers = JSON.parse(localStorage.getItem("users") || "[]");
       const storedAuthUser = JSON.parse(
-        localStorage.getItem("authUser") || "null"
+        sessionStorage.getItem("authUser") || "null"
       );
 
       dispatch({ type: "SET_USERS", payload: storedUsers });
       dispatch({ type: "SET_AUTH_USER", payload: storedAuthUser });
+      setLoading(false);
     }
   }, []);
 
   return (
     <AuthContext.Provider
-      value={{ ...state, register, login, logout, clearMessage }}
+      value={{ ...state, register, login, logout, clearMessage, loading }}
     >
       {children}
     </AuthContext.Provider>

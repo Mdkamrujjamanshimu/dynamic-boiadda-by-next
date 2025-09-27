@@ -2,7 +2,7 @@ import { BsTelephone } from "react-icons/bs";
 import React from "react";
 import Link from "next/link";
 
-const Navbar = ({ isOpen, setIsOpen }:any) => {
+const Navbar = ({ isOpen, setIsOpen }: any) => {
   return (
     <div>
       <nav className="bg-[#86bc42] max-[1023px]:hidden">
@@ -17,7 +17,7 @@ const Navbar = ({ isOpen, setIsOpen }:any) => {
             <Link href={"#"} className="text-[#fff]">
               <li className="cursor-pointer">লেখক </li>
             </Link>
-            <Link href={"#"} className="text-[#fff]">
+            <Link href={"/order"} className="text-[#fff]">
               <li className="cursor-pointer">অর্ডার দেখুন</li>
             </Link>
           </ul>
@@ -62,7 +62,7 @@ const Navbar = ({ isOpen, setIsOpen }:any) => {
             <li>লেখক</li>
           </Link>
           <Link
-            href={"#"}
+            href={"/order"}
             onClick={() => setIsOpen(false)}
             className="text-[#fff]"
           >

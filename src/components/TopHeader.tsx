@@ -7,6 +7,7 @@ import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 import logo from "@/images/logo.png";
+import profile from "@/images/profile.png";
 import HeaderSearch from "./HeaderSearch";
 import { useCartContext } from "@/context/CartContext";
 import { useAuth } from "@/context/AuthContext";
@@ -14,10 +15,6 @@ import { useAuth } from "@/context/AuthContext";
 const TopHeader = ({ isOpen, setIsOpen }: any) => {
   const { total_item } = useCartContext() as any;
   const { authUser, logout } = useAuth() as any;
-
-  const handleLogout = () => {
-    logout();
-  };
 
   return (
     <div className="bg-[url('https://bponi.sgp1.cdn.digitaloceanspaces.com/bponi/file/quykov1jj0hdkgu.webp')] bg-cover bg-center">
@@ -51,12 +48,16 @@ const TopHeader = ({ isOpen, setIsOpen }: any) => {
               <div className="hidden max-[1023px]:flex flex items-center gap-[.5rem] text-[2.2rem] ">
                 <div className="">
                   {authUser ? (
-                    <button
-                      onClick={handleLogout}
+                    <Link
+                      href={"/profile"}
                       className="text-[#fff] text-[2.5rem] font-semibold bg-transparent border-none outline-none max-[360px]:pr-[2rem] max-[345px]:pr-[6rem] max-[335px]:pr-[7rem] cursor-pointer"
                     >
-                      <BiLogOut />
-                    </button>
+                      <Image
+                        src={profile}
+                        alt="profile"
+                        className="w-[2rem] h-[2rem] rounded-full object-contain"
+                      />
+                    </Link>
                   ) : (
                     <span className="flex items-center text-[#fff] text-[2.5rem]">
                       <Link
@@ -80,12 +81,16 @@ const TopHeader = ({ isOpen, setIsOpen }: any) => {
               {/* লগইন / রেজিস্টার*/}
               <div className="text-[1.5rem] max-[1023px]:hidden">
                 {authUser ? (
-                  <button
-                    onClick={handleLogout}
+                  <Link
+                    href={"/profile"}
                     className="text-[#fff] font-semibold bg-transparent border-none outline-none pr-[3rem] max-[1175px]:pr-[4rem] cursor-pointer"
                   >
-                    লগআউট
-                  </button>
+                    <Image
+                      src={profile}
+                      alt="profile"
+                      className="w-[2rem] h-[2rem] rounded-full object-contain"
+                    />
+                  </Link>
                 ) : (
                   <span className="flex items-center text-[#fff] gap-[.5rem]">
                     <Link href={"/login"} className="text-[#fff] pr-[2.7rem]">
