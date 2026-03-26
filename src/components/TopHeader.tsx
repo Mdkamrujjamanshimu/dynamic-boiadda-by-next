@@ -18,7 +18,7 @@ const TopHeader = ({ isOpen, setIsOpen }: any) => {
 
   return (
     <div className="bg-[url('https://bponi.sgp1.cdn.digitaloceanspaces.com/bponi/file/quykov1jj0hdkgu.webp')] bg-cover bg-center">
-      <div className="container flex flex-col p-[2rem]">
+      <div className="container flex flex-col p-[1rem]">
         <div className="flex items-center justify-between gap-[1rem]">
           <div className="pr-[2rem] max-[345px]:pr-[4rem] max-[335px]:pr-[6rem]">
             <Link href={"/"}>
@@ -31,9 +31,9 @@ const TopHeader = ({ isOpen, setIsOpen }: any) => {
             </div>
             <div className="flex items-center ">
               <div className="flex items-center justify-center min-w-[9rem] text-[2.5rem]">
-                <Link href={"#"} className="px-[1rem] ">
+                {/* <Link href={"#"} className="px-[1rem]">
                   <AiOutlineHeart className="text-[#fff]" />
-                </Link>
+                </Link> */}
                 {/* Cart with badge */}
                 <div className="relative flex items-center justify-center p-[1rem]">
                   <Link href={"/cart"}>
