@@ -18,7 +18,7 @@ const page = () => {
 
   if (cart.length === 0) {
     return (
-      <div className="p-5 text-center text-xl font-semibold">
+      <div className="w-[100vw] h-[70vh] p-5 flex items-center justify-center text-[8rem] max-[1024px]:text-[6rem] max-[768px]:text-[5rem] max-[500px]:text-[3rem] font-semibold">
         কার্ট খালি আছে 🛒
       </div>
     );
