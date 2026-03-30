@@ -6,7 +6,7 @@ const Navbar = ({ isOpen, setIsOpen }: any) => {
   return (
     <div>
       <nav className="bg-[#86bc42] max-[1023px]:hidden">
-        <div className="container flex justify-between items-center text-[1.5rem] text-[#fff] px-[2rem]">
+        <div className="container flex justify-between items-center text-[1.5rem] text-[#fff] px-[1rem]">
           <ul className="flex items-center justify-between gap-[2.5rem] p-[1rem] text-[1.5rem]">
             <Link href={"/"} className="text-[#fff]">
               <li className="cursor-pointer">হোম</li>

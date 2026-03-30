@@ -8,7 +8,7 @@ const CategorySection = ({ categoryName }: any) => {
   const { products } = useProductContext() as any;
 
   const categoryProduct = products.filter(
-    (curElem: any) => curElem.category === categoryName
+    (curElem: any) => curElem.category === categoryName,
   );
 
   if (categoryProduct.length === 0) return null;

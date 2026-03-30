@@ -27,13 +27,13 @@ const page = () => {
   };
 
   return (
-    <div className="w-[35%] max-[1100px]:w-[40%] max-[900px]:w-[45%] max-[770px]:w-[50%] max-[620px]:w-[70%] max-[515px]:w-[90%] my-[10rem] mx-auto border-[.1rem] border-[#c3c9d6] rounded-[.5rem] py-[2rem]">
+    <div className="max-[700px]:w-[350px] max-[450px]:w-[300px] max-w-[400px] my-[10rem] mx-auto border-[.1rem] border-[#D1D5DB] rounded-[.5rem] py-[2rem] shadow-[0_4px_10px_rgba(0,0,0,0.25)]">
       <div className="flex items-center justify-center bg-gray-100 px-4">
         <div className="bg-white w-full max-w-md rounded-xl shadow-md p-6">
           <h2 className="text-center text-[1.8rem] text-[#1F2937] font-semibold mb-[2rem]">
             Sign up with Us
           </h2>
-          <hr />
+          <hr className="border-[#D1D5DB] border-[.1rem]" />
 
           <div className="px-[1rem]">
             {/* Logo + Description */}
@@ -63,7 +63,7 @@ const page = () => {
                   placeholder="Enter name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full p-[1rem] text-[1.6rem] outline-none border-[.1rem] rounded-[.5rem]"
+                  className="w-full p-[1rem] text-[1.6rem] outline-none border-[.1rem] rounded-[.5rem] border-[#D1D5DB]"
                   required
                 />
               </div>
@@ -78,7 +78,7 @@ const page = () => {
                   placeholder="Enter phone"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className="w-full p-[1rem] text-[1.6rem] outline-none border-[.1rem] rounded-[.5rem]"
+                  className="w-full p-[1rem] text-[1.6rem] outline-none border-[.1rem] rounded-[.5rem] border-[#D1D5DB]"
                   required
                 />
               </div>
@@ -93,16 +93,16 @@ const page = () => {
                   placeholder="Enter password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full p-[1rem] text-[1.6rem] outline-none border-[.1rem] rounded-[.5rem]"
+                  className="w-full p-[1rem] text-[1.6rem] outline-none border-[.1rem] rounded-[.5rem] border-[#D1D5DB]"
                   required
                 />
               </div>
 
-              <p className="text-right text-[#3B82F6] text-[1.2rem] cursor-pointer">
+              <span className="text-right text-[#3B82F6] text-[1.2rem] cursor-pointer hover:underline">
                 Have refer code?
-              </p>
+              </span>
 
-              <hr />
+              <hr className="border-[#D1D5DB] border-[.1rem]" />
 
               <button
                 type="submit"
@@ -113,7 +113,7 @@ const page = () => {
             </form>
 
             {message && (
-              <p className="mt-[3.2rem] text-[2rem] text-[#006400]">
+              <p className="mb-[3rem] mt-[1rem] text-[1.7rem] text-[#7C2D12] text-center font-[900]">
                 {message}
               </p>
             )}
@@ -122,14 +122,14 @@ const page = () => {
               <span className="text-[1.8rem] font-[700]">Or</span>
             </div>
 
-            <hr />
+            <hr className="border-[#D1D5DB] border-[.1rem]" />
 
             <div className="grid grid-cols-2 gap-[1rem] mt-[2rem]">
-              <button className="py-[1rem] rounded-[.5rem] border-none outline-none text-[#4338CA] text-[1.6rem] cursor-pointer">
+              <button className="py-[1rem] rounded-[.5rem] border-none outline-none text-[#4338CA] text-[1.6rem] cursor-pointer bg-[#F3F4F6] hover:bg-[#E5E7EB] transition">
                 Forgot Password?
               </button>
               <Link href={"/login"} className="text-center rounded-[.5rem]">
-                <button className="w-full text-[#4338CA] text-[1.6rem] py-[1rem] border-none outline-none cursor-pointer">
+                <button className="w-full text-[#4338CA] text-[1.6rem] py-[1rem] border-none outline-none cursor-pointer bg-[#F3F4F6] hover:bg-[#E5E7EB] transition">
                   Log In
                 </button>
               </Link>

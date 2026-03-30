@@ -5,7 +5,6 @@ import BestCategory from "./BestCategory";
 import { Toaster } from "react-hot-toast";
 
 const HomeSection = () => {
-
   return (
     <div className="container pt-[2rem] px-[2rem] pb-[8rem]">
       <Toaster

@@ -31,5 +31,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
-// grid grid-cols-3 max-[767px]:grid-cols-2 max-[640px]:grid-cols-1

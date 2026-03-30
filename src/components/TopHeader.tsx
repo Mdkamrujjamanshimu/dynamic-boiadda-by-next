@@ -18,7 +18,7 @@ const TopHeader = ({ isOpen, setIsOpen }: any) => {
 
   return (
     <div className="bg-[url('https://bponi.sgp1.cdn.digitaloceanspaces.com/bponi/file/quykov1jj0hdkgu.webp')] bg-cover bg-center">
-      <div className="container flex flex-col p-[1rem]">
+      <div className="container flex flex-col px-[1rem] py-[.5rem]">
         <div className="flex items-center justify-between gap-[1rem]">
           <div className="pr-[2rem] max-[345px]:pr-[4rem] max-[335px]:pr-[6rem]">
             <Link href={"/"}>
@@ -93,13 +93,13 @@ const TopHeader = ({ isOpen, setIsOpen }: any) => {
                   </Link>
                 ) : (
                   <span className="flex items-center text-[#fff] gap-[.5rem]">
-                    <Link href={"/login"} className="text-[#fff] pr-[2.7rem]">
+                    <Link href={"/login"} className="text-[#fff] pr-[2.7rem] hover:underline cursor-pointer">
                       লগইন
                     </Link>
                     /
                     <Link
                       href={"/register"}
-                      className="text-[#fff] pr-[4.2rem] cursor-pointer"
+                      className="text-[#fff] pr-[4.2rem] hover:underline cursor-pointer"
                     >
                       রেজিস্টার
                     </Link>
