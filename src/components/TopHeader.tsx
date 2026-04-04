@@ -93,7 +93,10 @@ const TopHeader = ({ isOpen, setIsOpen }: any) => {
                   </Link>
                 ) : (
                   <span className="flex items-center text-[#fff] gap-[.5rem]">
-                    <Link href={"/login"} className="text-[#fff] pr-[2.7rem] hover:underline cursor-pointer">
+                    <Link
+                      href={"/login"}
+                      className="text-[#fff] pr-[2.7rem] hover:underline cursor-pointer"
+                    >
                       লগইন
                     </Link>
                     /

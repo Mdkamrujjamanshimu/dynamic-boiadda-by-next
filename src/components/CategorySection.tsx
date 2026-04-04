@@ -24,9 +24,9 @@ const CategorySection = ({ categoryName }: any) => {
           </Link>
         </span>
         <div className="border-[.2rem] border-[#7DB13D] border-dashed rounded-[1rem]">
-          <div className="grid grid-cols-5 max-[1023px]:grid-cols-4 max-[767px]:grid-cols-3 max-[639px]:grid-cols-2 gap-[2rem] m-[2rem]">
+          <div className="grid grid-cols-5 max-[1023px]:grid-cols-4 max-[767px]:grid-cols-3 max-[639px]:grid-cols-2 gap-[.5rem] m-[1rem]">
             {categoryProduct.map((curElem: any) => (
-              <ProductsCard key={curElem.id} curElem={curElem} />
+              <ProductsCard className="" key={curElem.id} curElem={curElem} />
             ))}
           </div>
         </div>

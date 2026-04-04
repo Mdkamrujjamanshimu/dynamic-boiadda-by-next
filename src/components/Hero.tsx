@@ -21,10 +21,22 @@ const Hero = () => {
           <Image src={banner2} alt="banner2" className="" />
         </div>
       </div>
-      <div className="grid grid-cols-3 max-[767px]:grid-cols-2 max-[640px]:grid-cols-1">
-        <Image src={hero1} alt="hero" className="w-full h-auto" />
-        <Image src={hero2} alt="hero" className="w-full h-auto" />
-        <Image src={hero3} alt="hero" className="w-full h-auto" />
+      <div className="grid grid-cols-3 max-[767px]:grid-cols-2 max-[640px]:grid-cols-1 p-[.5rem]">
+        <Image
+          src={hero1}
+          alt="hero"
+          className="w-full h-auto hover:scale-[1.02] transition duration-300 cursor-pointer"
+        />
+        <Image
+          src={hero2}
+          alt="hero"
+          className="w-full h-auto hover:scale-[1.02] transition duration-300 cursor-pointer"
+        />
+        <Image
+          src={hero3}
+          alt="hero"
+          className="w-full h-auto hover:scale-[1.02] transition duration-300 cursor-pointer"
+        />
       </div>
     </div>
   );
