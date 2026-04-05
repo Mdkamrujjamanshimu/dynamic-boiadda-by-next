@@ -8,6 +8,8 @@ import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <div className="">
       <div>
@@ -131,7 +133,9 @@ const Footer = () => {
           </div>
         </div>
         <div className="text-center bg-[#86bc42] py-[2rem] text-[#fff] text-[1.4rem]">
-          <span>@2025 Boiadda.com -বই আড্ডা সমস্ত অধিকার সংরক্ষিত</span>
+          <span>
+            @ {currentYear} Boiadda.com -বই আড্ডা সমস্ত অধিকার সংরক্ষিত
+          </span>
         </div>
       </div>
     </div>

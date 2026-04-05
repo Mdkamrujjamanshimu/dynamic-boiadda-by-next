@@ -45,8 +45,8 @@ const page = () => {
               );
             })}
           </div>
-          <div className="w-[35%] max-[1023px]:w-full">
-            <div className="border-[.1rem] border-[#44d9db] p-[1rem] rounded-[.5rem]">
+          <div className="w-[35%] max-[1023px]:w-full p-[1rem]">
+            <div className="border-[.1rem] border-[#44d9db] p-[1rem] rounded-[.5rem] shadow-[0_2px_5px_rgba(0,0,0,0.25)]">
               <div className="flex justify-between items-center text-[1.7rem] max-[400px]:text-[1.3rem] mb-[1rem]">
                 <span>মোট</span>
                 <div className="flex gap-[1rem]">

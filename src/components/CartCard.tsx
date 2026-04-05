@@ -11,7 +11,7 @@ const CartCard = ({ curElem, increment, decrement, removeItem }: any) => {
 
   return (
     <div>
-      <div className="gap-[1rem] p-[1rem] border-[.1rem] border-[#44d9db] rounded-[.5rem] bg-[#FAFAFA]">
+      <div className="gap-[1rem] p-[1rem] border-[.1rem] border-[#44d9db] rounded-[.5rem] bg-[#FAFAFA] shadow-[0_2px_5px_rgba(0,0,0,0.25)] m-[1rem]">
         <div className="relative w-full flex gap-[1rem] min-h-[10rem] max-[640px]:pb-[4rem]">
           <div className="relative w-[20%] max-[400px]:w-[30%] aspect-square">
             <Image
