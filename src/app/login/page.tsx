@@ -18,6 +18,17 @@ const page = () => {
     clearMessage(); // পেজ লোড হলে message reset
   }, []);
 
+  // ? TO CLEAR MESSAGE AFTER 2 SECONDS
+  useEffect(() => {
+    if (message) {
+      const timer = setTimeout(() => {
+        clearMessage();
+      }, 2000); // 2 seconds
+
+      return () => clearTimeout(timer); // cleanup
+    }
+  }, [message]);
+
   //? IF USER LOGIN SUCCESSFULLY REDIRECT TO HOME PAGE
   useEffect(() => {
     if (authUser) {
@@ -61,7 +72,11 @@ const page = () => {
             </div>
 
             {/* Form */}
-            <form onSubmit={handleSubmit} className="flex flex-col gap-[2rem]">
+            <form
+              onSubmit={handleSubmit}
+              autoComplete="off"
+              className="flex flex-col gap-[2rem]"
+            >
               {/* Phone */}
               <div>
                 <label className="block text-[1.7rem] font-[600] pb-[.5rem]">
@@ -70,6 +85,7 @@ const page = () => {
                 <input
                   type="tel"
                   name="phone"
+                  autoComplete="off"
                   placeholder="Enter phone"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
@@ -86,6 +102,7 @@ const page = () => {
                 <input
                   type="password"
                   name="password"
+                  autoComplete="new-password"
                   placeholder="Enter password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}

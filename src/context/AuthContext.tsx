@@ -29,10 +29,13 @@ const AuthProvider = ({ children }: any) => {
     }
 
     const userExists = state.users.find(
-      (curUser: any) => curUser.phone === user.phone
+      (curUser: any) => curUser.phone === user.phone,
     );
     if (userExists) {
-      dispatch({ type: "SET_MESSAGE", payload: "You are already registered" });
+      dispatch({
+        type: "SET_MESSAGE",
+        payload: "You are already registered. Please login",
+      });
       return;
     }
 
@@ -81,7 +84,7 @@ const AuthProvider = ({ children }: any) => {
     if (typeof window !== "undefined") {
       const storedUsers = JSON.parse(localStorage.getItem("users") || "[]");
       const storedAuthUser = JSON.parse(
-        sessionStorage.getItem("authUser") || "null"
+        sessionStorage.getItem("authUser") || "null",
       );
 
       dispatch({ type: "SET_USERS", payload: storedUsers });

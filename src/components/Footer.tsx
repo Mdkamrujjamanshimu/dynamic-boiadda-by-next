@@ -132,6 +132,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        {/* Copyright */}
         <div className="text-center bg-[#86bc42] py-[2rem] text-[#fff] text-[1.4rem]">
           <span>
             @ {currentYear} Boiadda.com -বই আড্ডা সমস্ত অধিকার সংরক্ষিত

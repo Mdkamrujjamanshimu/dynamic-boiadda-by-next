@@ -11,7 +11,7 @@ import IncDec from "./IncDec";
 import { useCartContext } from "@/context/CartContext";
 import toast, { Toaster } from "react-hot-toast";
 
-const SingleProdMidContent = ({ product }:any) => {
+const SingleProdMidContent = ({ product }: any) => {
   const { addToCart } = useCartContext() as any;
   const [showFull, setShowFull] = useState(false);
   const [amount, setAmount] = useState(1);
@@ -28,7 +28,7 @@ const SingleProdMidContent = ({ product }:any) => {
   const handleAddToCart = () => {
     addToCart(product.id, product, amount);
 
-    toast.success("Added to the cart", {
+    toast.success("কার্টে যুক্ত করা হয়েছে", {
       position: "top-right",
     });
   };

@@ -10,7 +10,7 @@ const ProductsCard = ({ curElem }: any) => {
 
   const handleAddToCart = () => {
     addToCart(curElem.id, curElem, 1);
-    toast.success("Added to the cart", {
+    toast.success("কার্টে যুক্ত করা হয়েছে", {
       position: "top-right",
     });
   };

@@ -21,14 +21,14 @@ const Page = () => {
   }
 
   return (
-    <div className="w-[35%] max-[1100px]:w-[40%] max-[900px]:w-[45%] max-[770px]:w-[50%] max-[620px]:w-[70%] max-[515px]:w-[90%] my-[10rem] mx-auto border-[.1rem] border-[#c3c9d6] rounded-[.5rem] py-[2rem]">
+    <div className="max-[700px]:w-[350px] max-[450px]:w-[300px] max-w-[400px] my-[10rem] mx-auto border-[.1rem] border-[#D1D5DB] rounded-[.5rem] py-[2rem] shadow-[0_4px_10px_rgba(0,0,0,0.25)]">
       <div className="flex items-center justify-center bg-gray-100 px-4">
         <div className="bg-white w-full max-w-md rounded-xl shadow-md p-6">
           {/* Title */}
           <h2 className="text-center text-[1.8rem] text-[#1F2937] font-semibold mb-[2rem]">
             Profile
           </h2>
-          <hr />
+          <hr className="border-[#D1D5DB] border-[.1rem]" />
 
           <div className="px-[1rem]">
             {/* Logo + Description */}
@@ -46,12 +46,12 @@ const Page = () => {
                   Boiadda.com - বই আড্ডা
                 </h3>
                 <p className="text-[#6B7280] text-[2rem] mt-[.8rem] text-center">
-                  welcome {authUser.name}!
+                  welcome, {authUser.name}!
                 </p>
               </div>
             </div>
 
-            <hr />
+            <hr className="border-[#D1D5DB] border-[.1rem]" />
 
             {/* Profile Info */}
 
@@ -66,13 +66,13 @@ const Page = () => {
               </div>
             </div>
 
-            <hr className="my-4" />
+            <hr className="border-[#D1D5DB] border-[.1rem]" />
 
             {/* LOGOUT */}
             <div className="mt-[2rem]">
               <button
                 onClick={logout}
-                className="w-full bg-[#DC2626] border-none outline-none text-[#fff] text-[1.8rem] py-[1rem] rounded-[.5rem] cursor-pointer"
+                className="w-full bg-[#DC2626] hover:bg-[#B91C1C] transition-color duration-300 border-none outline-none text-[#fff] text-[1.8rem] py-[1rem] rounded-[.5rem] cursor-pointer"
               >
                 Logout
               </button>
