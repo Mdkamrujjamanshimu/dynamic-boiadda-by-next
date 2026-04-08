@@ -8,7 +8,7 @@ import hero3 from "@/images/hero3.jpg";
 
 const Hero = () => {
   return (
-    <div>
+    <div className="overflow-visible">
       <div className="flex w-full gap-[2rem] mb-[2rem]">
         <div>
           <Image

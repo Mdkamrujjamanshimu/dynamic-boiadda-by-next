@@ -109,7 +109,7 @@ const TopHeader = ({ isOpen, setIsOpen }: any) => {
             </div>
           </div>
         </div>
-        <div className="hidden max-[1023px]:block">
+        <div className="hidden max-[1023px]:block overflow-visible">
           <HeaderSearch />
         </div>
       </div>

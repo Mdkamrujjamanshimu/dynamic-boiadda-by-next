@@ -6,7 +6,7 @@ import { Toaster } from "react-hot-toast";
 
 const HomeSection = () => {
   return (
-    <div className="container pt-[2rem] px-[2rem] pb-[8rem]">
+    <div className="container pt-[2rem] px-[2rem] pb-[8rem] overflow-visible">
       <Toaster
         position="top-right"
         toastOptions={{
