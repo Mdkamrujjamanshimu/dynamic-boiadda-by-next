@@ -39,7 +39,9 @@ const HeaderSearch = () => {
         .slice(0, 6); // Limit to 6 suggestions
 
       setSuggestions(filtered);
-      setIsOpen(filtered.length > 0);
+      setIsOpen(
+        filtered.length > 0 || (value.trim() !== "" && filtered.length === 0),
+      );
       setIsLoading(false);
     }, 300);
   };
@@ -97,6 +99,12 @@ const HeaderSearch = () => {
         setSearchQuery("");
         setSuggestions([]);
         setIsOpen(false);
+        setIsLoading(false);
+      } else {
+        // যদি কোনো ম্যাচ না পাওয়া যায়, তাহলে ড্রপডাউন দেখানোর জন্য
+        setSuggestions([]);
+        setIsOpen(true);
+        setIsLoading(false);
       }
     }
   };
@@ -172,7 +180,7 @@ const HeaderSearch = () => {
               ))}
             </div>
           ) : (
-            <div className="p-4 text-center text-gray-400 text-sm">
+            <div className="p-[1.6rem] text-center text-gray-400 text-[1.5rem]">
               কোনো বই পাওয়া যায়নি
             </div>
           )}

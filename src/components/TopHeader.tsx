@@ -20,7 +20,7 @@ const TopHeader = ({ isOpen, setIsOpen }: any) => {
     <div className="bg-[url('https://bponi.sgp1.cdn.digitaloceanspaces.com/bponi/file/quykov1jj0hdkgu.webp')] bg-cover bg-center overflow-visible">
       <div className="container flex flex-col px-[1rem] py-[.5rem] overflow-visible">
         <div className="flex items-center justify-between gap-[1rem] overflow-visible">
-          <div className="pr-[2rem] max-[345px]:pr-[4rem] max-[335px]:pr-[6rem]">
+          <div className="min-w-[100px]">
             <Link href={"/"}>
               <Image src={logo} alt="logo" width={100} height={70} />
             </Link>
@@ -29,7 +29,7 @@ const TopHeader = ({ isOpen, setIsOpen }: any) => {
             <div className="relative w-full max-[1023px]:hidden overflow-visible">
               <HeaderSearch />
             </div>
-            <div className="flex items-center ">
+            <div className="flex items-center">
               <div className="flex items-center justify-center min-w-[9rem] text-[2.5rem]">
                 {/* Cart with badge */}
                 <div className="relative flex items-center justify-center p-[1rem]">
@@ -59,7 +59,7 @@ const TopHeader = ({ isOpen, setIsOpen }: any) => {
                     <span className="flex items-center text-[#fff] text-[2.5rem]">
                       <Link
                         href={"/login"}
-                        className="text-[#fff] max-[360px]:pr-[2rem] max-[345px]:pr-[6rem] max-[335px]:pr-[7rem] cursor-pointer"
+                        className="text-[#fff] cursor-pointer"
                       >
                         <BsPerson />
                       </Link>
