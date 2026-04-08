@@ -17,23 +17,20 @@ const TopHeader = ({ isOpen, setIsOpen }: any) => {
   const { authUser, logout } = useAuth() as any;
 
   return (
-    <div className="bg-[url('https://bponi.sgp1.cdn.digitaloceanspaces.com/bponi/file/quykov1jj0hdkgu.webp')] bg-cover bg-center">
-      <div className="container flex flex-col px-[1rem] py-[.5rem]">
-        <div className="flex items-center justify-between gap-[1rem]">
+    <div className="bg-[url('https://bponi.sgp1.cdn.digitaloceanspaces.com/bponi/file/quykov1jj0hdkgu.webp')] bg-cover bg-center overflow-visible">
+      <div className="container flex flex-col px-[1rem] py-[.5rem] overflow-visible">
+        <div className="flex items-center justify-between gap-[1rem] overflow-visible">
           <div className="pr-[2rem] max-[345px]:pr-[4rem] max-[335px]:pr-[6rem]">
             <Link href={"/"}>
               <Image src={logo} alt="logo" width={100} height={70} />
             </Link>
           </div>
-          <div className="w-full flex items-center justify-center  gap-[1.5rem] max-[1023px]:w-auto">
-            <div className="w-full max-[1023px]:hidden">
+          <div className="w-full flex items-center justify-center gap-[1.5rem] max-[1023px]:w-auto  overflow-visible">
+            <div className="relative w-full max-[1023px]:hidden overflow-visible">
               <HeaderSearch />
             </div>
             <div className="flex items-center ">
               <div className="flex items-center justify-center min-w-[9rem] text-[2.5rem]">
-                {/* <Link href={"#"} className="px-[1rem]">
-                  <AiOutlineHeart className="text-[#fff]" />
-                </Link> */}
                 {/* Cart with badge */}
                 <div className="relative flex items-center justify-center p-[1rem]">
                   <Link href={"/cart"}>

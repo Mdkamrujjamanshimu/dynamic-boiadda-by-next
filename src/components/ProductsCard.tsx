@@ -54,7 +54,7 @@ const ProductsCard = ({ curElem }: any) => {
       {/* ===== Add to Cart Button ===== */}
       <div
         onClick={handleAddToCart}
-        className="w-full mt-[1.5rem] opacity-0 group-hover:opacity-100 transition duration-300"
+        className="w-full max-[768px]:hidden mt-[1.5rem] opacity-0 group-hover:opacity-100 transition duration-300"
       >
         <button className="w-full bg-[#7DB13D] text-[#fff] py-[.8rem] text-[1.4rem] font-semibold rounded-[.3rem] border-none outline-none cursor-pointer">
           {/* Add to Cart */}
