@@ -13,7 +13,7 @@ const HeaderSearch = () => {
   const searchRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
   const { products } = useProductContext();
-  const debounceTimer = useRef<NodeJS.Timeout>();
+  const debounceTimer = useRef<NodeJS.Timeout | null>(null);
 
   // Debounced search function
   const handleSearch = (value: string) => {
