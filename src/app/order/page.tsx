@@ -3,10 +3,15 @@ import { useAuth } from "@/context/AuthContext";
 import { useProductContext } from "@/context/ProductContext";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import Home from "@/components/Orders/Home";
+import MyOrders from "@/components/Orders/MyOrders";
+import Password from "@/components/Orders/Password";
+import Settings from "@/components/Orders/Settings";
 
 const page = () => {
   const { authUser, loading } = useAuth() as any;
   const [orders, setOrders] = useState<any[]>([]);
+  const [active, setActive] = useState("home");
   const router = useRouter();
 
   useEffect(() => {
@@ -32,117 +37,49 @@ const page = () => {
   }, [authUser, router]);
 
   return (
-    <div className="container py-[2rem] p-[2rem]">
-      <h1 className="text-[2rem] text-[#1F2937] font-bold mb-[.5rem]">
-        My Orders
-      </h1>
-      <hr className="mb-[2rem]" />
-      {orders.length === 0 ? (
-        <p className="h-[60vh] flex items-center justify-center text-[8rem] max-[1024px]:text-[6rem] max-[768px]:text-[5rem] max-[500px]:text-[3rem] font-semibold">
-          No orders found!
-        </p>
-      ) : (
-        <div className="flex flex-col gap-[2.4rem]">
-          {orders.map((order, index) => (
-            <div
-              key={index}
-              className="border-[.1rem] border-[#c3c9d6] p-[1.6rem] m-[1rem] rounded-[.5rem] shadow-[0_2px_5px_rgba(0,0,0,0.25)]"
+    <>
+      <div className="w-full container flex max-[1024px]:flex-col gap-[1rem] py-[4rem] px-[1rem]">
+        {/* Navigation */}
+        <div className="w-[20%] max-[1024px]:w-full overflow-x-auto border-r-[1px] border-r-[#f0f0f0] max-[1024px]:border-r-[0px] max-[1024px]:border-b max-[1024px]:border-b-[#f0f0f0] max-[1024px]:max-w-screen rounded-[0.5rem]">
+          <ul className="flex flex-col justify-between gap-[1rem] max-[1024px]:flex-row max-[1024px]:min-w-[600px] min-w-[200px] p-[.5rem] text-[1.8rem]">
+            <li
+              className="whitespace-nowrap hover:bg-[#f0f0f0] transition duration-300 p-[1rem] rounded-[0.5rem] cursor-pointer"
+              onClick={() => setActive("home")}
             >
-              <div className="flex items-center justify-between">
-                <h2 className="text-[1.6rem] mb-[.8rem]">
-                  Order ID: <span className="text-[#86BC42]">#{index + 1}</span>
-                </h2>
-
-                <h2 className="text-[1.6rem] mb-[.8rem]">
-                  Status: <span className="text-[#86BC42]">Shipped</span>
-                </h2>
-
-                <h2 className="text-[#1F2937]">
-                  Date: <span className="text-[#6B7280]">{order.date}</span>
-                </h2>
-              </div>
-              <div className="flex items-center text-[#1F2937] gap-[.5rem] max-[430px]:gap-[.3rem]">
-                <h2 className="text-[2rem] max-[430px]:text-[1.7rem]">
-                  Total:
-                </h2>
-                <span className="text-[1.6rem] max-[430px]:text-[1.3rem] text-[#EF4444] font-[600]">
-                  ৳{order.total}
-                </span>
-                <span className="text-[1.7rem] max-[430px]:text-[1.3rem] font-[900]">
-                  +
-                </span>
-                <h2 className="text-[2rem] max-[430px]:text-[1.7rem]">
-                  Delivery:
-                </h2>
-                <span className="text-[1.6rem] max-[430px]:text-[1.3rem] text-[#EF4444] font-[600]">
-                  ৳{order.deliveryCharge}
-                </span>
-                <span className="text-[1.7rem] max-[430px]:text-[1.3rem] font-[900]">
-                  =
-                </span>
-                <span className="text-[1.6rem] max-[430px]:text-[1.3rem] text-[#EF4444] font-[600]">
-                  ৳{order.grandTotal}
-                </span>
-              </div>
-              <div className="flex items-center gap-[.5rem] text-[#1F2937] my-[.5rem]">
-                <h2 className="text-[2rem] max-[430px]:text-[1.7rem]">
-                  Phone:
-                </h2>
-                <span className="text-[1.6rem] max-[430px]:text-[1.3rem] font-[600]">
-                  {order.customerInfo.phone}
-                </span>
-              </div>
-              <div className="flex items-center gap-[.5rem] text-[#1F2937] my-[.5rem]">
-                <h2 className="text-[2rem] max-[430px]:text-[1.7rem]">
-                  Address:
-                </h2>
-                <span className="text-[1.6rem] max-[430px]:text-[1.3rem] font-[600]">
-                  {order.customerInfo.address}
-                </span>
-              </div>
-
-              <div className="mt-3">
-                <h2 className="text-[2rem] text-[#1F2937] mb-[1rem]">
-                  Ordered Items:
-                </h2>
-                <ul className="grid grid-cols-5 max-[768px]:grid-cols-4 max-[600px]:grid-cols-3 text-center gap-[1rem] w-full text-[2rem] text-[#1F2937] font-[700] pb-[.5rem]">
-                  <li>Name</li>
-                  <li>Amount</li>
-                  <li>Price</li>
-                  <li className="max-[600px]:hidden">Subtotal</li>
-                  <li className="max-[768px]:hidden">Discount</li>
-                </ul>
-                <hr className="mb-[1rem]" />
-                <div className="">
-                  {order.items.map((item: any, index: number) => (
-                    <ul
-                      key={index}
-                      className="grid grid-cols-5 max-[768px]:grid-cols-4 max-[600px]:grid-cols-3 text-center"
-                    >
-                      <li className="text-[1.4rem] my-[.5rem] p-[.5rem] bg-[#F1F1F7]">
-                        {item.name}
-                      </li>
-                      <li className="text-[1.4rem] my-[.5rem] p-[.5rem] bg-[#F1F1F7]">
-                        {item.amount}
-                      </li>
-                      <li className="text-[1.4rem] my-[.5rem] p-[.5rem] bg-[#F1F1F7]">
-                        ৳{item.price}
-                      </li>
-                      <li className="text-[1.4rem] my-[.5rem] p-[.5rem] bg-[#F1F1F7] max-[600px]:hidden">
-                        ৳{item.price * item.amount}
-                      </li>
-                      <li className="text-[1.4rem] my-[.5rem] p-[.5rem] bg-[#F1F1F7] max-[768px]:hidden">
-                        {item.discount}% off
-                      </li>
-                    </ul>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
+              Home
+            </li>
+            <li
+              className="whitespace-nowrap hover:bg-[#f0f0f0] transition duration-300 p-[1rem] rounded-[0.5rem] cursor-pointer"
+              onClick={() => setActive("my-orders")}
+            >
+              My Orders
+            </li>
+            <li
+              className="whitespace-nowrap hover:bg-[#f0f0f0] transition duration-300 p-[1rem] rounded-[0.5rem] cursor-pointer"
+              onClick={() => setActive("settings")}
+            >
+              Settings
+            </li>
+            <li
+              className="whitespace-nowrap hover:bg-[#f0f0f0] transition duration-300 p-[1rem] rounded-[0.5rem] cursor-pointer"
+              onClick={() => setActive("password")}
+            >
+              Password
+            </li>
+            <li className="whitespace-nowrap hover:bg-[#f0f0f0] transition duration-300 p-[1rem] rounded-[0.5rem] cursor-pointer">
+              Log Out
+            </li>
+          </ul>
         </div>
-      )}
-    </div>
+        {/* Content */}
+        <div className="w-[80%] max-[1024px]:w-full flex flex-col gap-[1rem] pl-[2rem]">
+          {active === "home" && <Home orders={orders} authUser={authUser} />}
+          {active === "my-orders" && <MyOrders orders={orders} />}
+          {active === "settings" && <Settings />}
+          {active === "password" && <Password />}
+        </div>
+      </div>
+    </>
   );
 };
 

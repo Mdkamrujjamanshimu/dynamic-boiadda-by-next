@@ -42,12 +42,12 @@ const TopHeader = ({ isOpen, setIsOpen }: any) => {
                 </div>
               </div>
 
-              <div className="hidden max-[1023px]:flex flex items-center gap-[.5rem] text-[2.2rem] ">
-                <div className="">
+              <div className="hidden max-[1023px]:flex flex items-center gap-[.5rem] text-[2.2rem]">
+                <div className="pr-[1rem]">
                   {authUser ? (
                     <Link
                       href={"/profile"}
-                      className="text-[#fff] text-[2.5rem] font-semibold bg-transparent border-none outline-none max-[360px]:pr-[2rem] max-[345px]:pr-[6rem] max-[335px]:pr-[7rem] cursor-pointer"
+                      className="text-[#fff] text-[2.5rem] font-semibold bg-transparent border-none outline-none cursor-pointer"
                     >
                       <Image
                         src={profile}
@@ -70,7 +70,7 @@ const TopHeader = ({ isOpen, setIsOpen }: any) => {
                 {/* Menu Toggle Button */}
                 <button
                   onClick={() => setIsOpen(!isOpen)}
-                  className="max-[350px]:pr-[2.2rem] bg-transparent border-none cursor-pointer outline-none text-[#fff] text-[2.5rem]"
+                  className="bg-transparent border-none cursor-pointer outline-none text-[#fff] text-[2.5rem]"
                 >
                   {isOpen ? <AiOutlineClose /> : <AiOutlineMenu />}
                 </button>
@@ -80,7 +80,7 @@ const TopHeader = ({ isOpen, setIsOpen }: any) => {
                 {authUser ? (
                   <Link
                     href={"/profile"}
-                    className="text-[#fff] font-semibold bg-transparent border-none outline-none pr-[3rem] max-[1175px]:pr-[4rem] cursor-pointer"
+                    className="text-[#fff] font-semibold bg-transparent border-none outline-none pr-[2.7rem] cursor-pointer"
                   >
                     <Image
                       src={profile}

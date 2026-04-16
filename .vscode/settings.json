@@ -1,0 +1,57 @@
+{
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "modifications",
+  "editor.formatOnPaste": false,
+
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.requireConfig": true,
+  "prettier.useEditorConfig": false,
+
+  "editor.wordWrap": "on",
+  "workbench.colorTheme": "Night Owl",
+  "workbench.iconTheme": "material-icon-theme",
+
+  "editor.autoClosingBrackets": "always",
+  "editor.autoClosingComments": "always",
+  "editor.autoClosingDelete": "always",
+  "editor.autoClosingOvertype": "auto",
+  "editor.autoClosingQuotes": "always",
+
+  "editor.autoIndentOnPaste": true,
+  "editor.autoSurround": "brackets",
+
+  "editor.bracketPairColorization.enabled": true,
+
+  "editor.cursorSmoothCaretAnimation": "off",
+
+  "editor.suggestSelection": "first",
+  "editor.tabCompletion": "on",
+
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": false
+  },
+
+  "editor.inlineSuggest.enabled": true,
+
+  "editor.codeActions.triggerOnFocusChange": false,
+  "editor.codeActionsOnSave": {},
+
+  "eslint.run": "onSave",
+  "eslint.format.enable": false,
+
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  },
+  "emmet.triggerExpansionOnTab": true,
+
+  "path-intellisense.absolutePathToWorkspace": true,
+  "path-intellisense.showHiddenFiles": false,
+
+  "editor.defaultColorDecorators": "auto"
+}

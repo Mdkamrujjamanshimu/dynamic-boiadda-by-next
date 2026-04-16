@@ -5,6 +5,9 @@ import Footer from "@/components/Footer";
 import { AppProvider } from "@/context/ProductContext";
 import { CartProvider } from "@/context/CartContext";
 import { AuthProvider } from "@/context/AuthContext";
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Dynamic Boiadda clone by nextjs",
@@ -18,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className={inter.className}>
         <AppProvider>
           <CartProvider>
             <AuthProvider>
