@@ -10,11 +10,11 @@ const HomeSection = () => {
       <Toaster
         position="top-right"
         toastOptions={{
-          duration: 4000,
+          duration: 1000,
           style: {
             background: "#16A34A",
             color: "#fff",
-            fontSize: "2rem",
+            fontSize: "1.5rem",
             padding: "1rem 3rem 1rem 1rem", // right padding বেশি দিলাম cross icon জন্য
             borderRadius: "0.5rem",
             maxWidth: "400px", // crop এড়াতে

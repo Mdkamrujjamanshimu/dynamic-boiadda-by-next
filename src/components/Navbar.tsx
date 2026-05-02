@@ -21,13 +21,13 @@ const Navbar = ({ isOpen, setIsOpen }: any) => {
               <li className="cursor-pointer">ক্যাটাগরি </li>
             </Link>
             <Link
-              href={"#"}
+              href={"/authors"}
               className="text-[#fff] hover:bg-[#65a30d] rounded-full px-[1rem] py-[.5rem] transition-colors duration-300"
             >
               <li className="cursor-pointer">লেখক </li>
             </Link>
             <Link
-              href={"/order"}
+              href={"/user/my-orders"}
               className="text-[#fff] hover:bg-[#65a30d] rounded-full px-[1rem] py-[.5rem] transition-colors duration-300"
             >
               <li className="cursor-pointer">অর্ডার দেখুন</li>
@@ -38,8 +38,8 @@ const Navbar = ({ isOpen, setIsOpen }: any) => {
               <BsTelephone />
             </div>
             <span>
-              <Link href={"tel:01737114925"} className="text-[#fff]">
-                হট লাইন: +8801714819822
+              <Link href={"tel:+8801737114925"} className="text-[#fff]">
+                হট লাইন: +8801737114925
               </Link>
             </span>
           </div>
@@ -68,14 +68,14 @@ const Navbar = ({ isOpen, setIsOpen }: any) => {
             <li>ক্যাটাগরি</li>
           </Link>
           <Link
-            href={"#"}
+            href={"authors"}
             onClick={() => setIsOpen(false)}
             className="text-[#fff] hover:bg-[#65a30d] px-[1rem] py-[.5rem] transition-colors duration-300 rounded-[.5rem]"
           >
             <li>লেখক</li>
           </Link>
           <Link
-            href={"/order"}
+            href={"/user/my-orders"}
             onClick={() => setIsOpen(false)}
             className="text-[#fff] hover:bg-[#65a30d] px-[1rem] py-[.5rem] transition-colors duration-300 rounded-[.5rem]"
           >

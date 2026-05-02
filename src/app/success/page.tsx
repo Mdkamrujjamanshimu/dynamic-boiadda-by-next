@@ -18,7 +18,7 @@ const page = () => {
         </h1>
         <p className="text-[2rem]">
           To Track Your Order, Please
-          <Link href={"/order"}>
+          <Link href={"/user"}>
             <span className="text-[#22C55E] underline cursor-pointer">
               Click Here
             </span>

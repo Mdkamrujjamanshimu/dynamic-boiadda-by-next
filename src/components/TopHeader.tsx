@@ -11,6 +11,7 @@ import profile from "@/images/profile.png";
 import HeaderSearch from "./HeaderSearch";
 import { useCartContext } from "@/context/CartContext";
 import { useAuth } from "@/context/AuthContext";
+import { FiLogOut } from "react-icons/fi";
 
 const TopHeader = ({ isOpen, setIsOpen }: any) => {
   const { total_item } = useCartContext() as any;
@@ -45,16 +46,17 @@ const TopHeader = ({ isOpen, setIsOpen }: any) => {
               <div className="hidden max-[1023px]:flex flex items-center gap-[.5rem] text-[2.2rem]">
                 <div className="pr-[1rem]">
                   {authUser ? (
-                    <Link
-                      href={"/profile"}
+                    <div
+                      onClick={logout}
                       className="text-[#fff] text-[2.5rem] font-semibold bg-transparent border-none outline-none cursor-pointer"
                     >
-                      <Image
+                      {/* <Image
                         src={profile}
                         alt="profile"
                         className="w-[2rem] h-[2rem] rounded-full object-contain"
-                      />
-                    </Link>
+                      /> */}
+                      <FiLogOut className="text-[2.5rem]" />
+                    </div>
                   ) : (
                     <span className="flex items-center text-[#fff] text-[2.5rem]">
                       <Link
@@ -78,16 +80,17 @@ const TopHeader = ({ isOpen, setIsOpen }: any) => {
               {/* লগইন / রেজিস্টার*/}
               <div className="text-[1.5rem] max-[1023px]:hidden">
                 {authUser ? (
-                  <Link
-                    href={"/profile"}
+                  <div
+                    onClick={logout}
                     className="text-[#fff] font-semibold bg-transparent border-none outline-none pr-[2.7rem] cursor-pointer"
                   >
-                    <Image
+                    {/* <Image
                       src={profile}
                       alt="profile"
                       className="w-[2rem] h-[2rem] rounded-full object-contain"
-                    />
-                  </Link>
+                    /> */}
+                    <FiLogOut className="text-[2.5rem]" />
+                  </div>
                 ) : (
                   <span className="flex items-center text-[#fff] gap-[.5rem]">
                     <Link

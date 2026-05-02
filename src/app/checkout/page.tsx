@@ -32,10 +32,10 @@ const page = () => {
   const router = useRouter();
 
   const handleNext = () => {
-    if (!authUser) {
-      setErrorMessage("Please login first");
-      return;
-    }
+    // if (!authUser) {
+    //   setErrorMessage("Please login first");
+    //   return;
+    // }
 
     const orderData = {
       items: cart,
@@ -85,11 +85,11 @@ const page = () => {
       <Toaster
         position="top-right"
         toastOptions={{
-          duration: 4000,
+          duration: 1000,
           style: {
             background: "#16A34A",
             color: "#fff",
-            fontSize: "2rem",
+            fontSize: "1.5rem",
             padding: "1rem 3rem 1rem 1rem",
             borderRadius: "0.5rem",
             maxWidth: "400px",
@@ -179,11 +179,10 @@ const page = () => {
               <div className="w-[65%] max-[1023px]:w-full">
                 <h2 className="text-[1.5rem] py-[1rem]">পে করুন</h2>
                 <div
-                  className={`flex gap-[1rem] border-[.1rem] p-[1rem] rounded-[.5rem] mb-[2rem] cursor-pointer transition ${
-                    selectedArea === "outside"
+                  className={`flex gap-[1rem] border-[.1rem] p-[1rem] rounded-[.5rem] mb-[2rem] cursor-pointer transition ${selectedArea === "outside"
                       ? "bg-[#D1D5DB] border-[#44d9db]"
                       : "border-[#44d9db]"
-                  }`}
+                    }`}
                   onClick={() => setSelectedArea("outside")}
                 >
                   <input
@@ -204,11 +203,10 @@ const page = () => {
                 </div>
 
                 <div
-                  className={`flex gap-[1rem] border-[.1rem] p-[1rem] rounded-[.5rem] mb-[2rem] cursor-pointer transition ${
-                    selectedArea === "inside"
+                  className={`flex gap-[1rem] border-[.1rem] p-[1rem] rounded-[.5rem] mb-[2rem] cursor-pointer transition ${selectedArea === "inside"
                       ? "bg-[#D1D5DB] border-pink-400"
                       : "border-[#44d9db]"
-                  }`}
+                    }`}
                   onClick={() => setSelectedArea("inside")}
                 >
                   <input
