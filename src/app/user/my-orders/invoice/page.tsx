@@ -95,8 +95,15 @@ const page = () => {
 
             <div className="">
               {active === "status" && <Status order={order} />}
-              {active === "invoice" && <Invoice order={order} orderIndex={orderIndex} />}
-              {active === "resell" && <Resell order={order} orderIndex={orderIndex} />}
+              {active === "invoice" && orderIndex && (
+                <Invoice order={order} orderIndex={orderIndex} />
+              )}
+
+              {active === "resell" && orderIndex && (
+                <Resell order={order} orderIndex={orderIndex} />
+              )}
+              {/* {active === "invoice" && <Invoice order={order} orderIndex={orderIndex} />}
+              {active === "resell" && <Resell order={order} orderIndex={orderIndex} />} */}
             </div>
           </div>
         </div>
