@@ -30,7 +30,7 @@ const Navbar = ({ isOpen, setIsOpen }: any) => {
                 ক্যাটাগরি
               </Link>
 
-              <div className="pointer-events-none absolute left-[1rem] right-[1rem] top-[calc(100%-2px)] z-[1100] hidden w-[calc(100%-2rem)] overflow-y-auto overflow-visible rounded-[1rem] border border-[#d1d5db] bg-[#fff] text-[#1f2937] shadow-[0_10px_30px_rgba(0,0,0,0.15)] group-hover:block group-hover:pointer-events-auto">
+              <div className="pointer-events-none absolute left-[1rem] right-[1rem] top-[calc(100%-5px)] z-[1100] hidden w-[calc(100%-2rem)] overflow-y-auto overflow-visible rounded-[1rem] border border-[#d1d5db] bg-[#fff] text-[#1f2937] shadow-[0_10px_30px_rgba(0,0,0,0.15)] group-hover:block group-hover:pointer-events-auto">
                 <div className="grid grid-cols-4 gap-[0.25rem] p-[0.75rem]">
                   {categoryList.length > 0 ? (
                     categoryList.map((category: string) => (
@@ -58,7 +58,7 @@ const Navbar = ({ isOpen, setIsOpen }: any) => {
                 লেখক
               </Link>
 
-              <div className="pointer-events-none absolute left-[1rem] right-[1rem] top-[calc(100%-2px)] z-[1100] hidden w-[calc(100%-2rem)] overflow-y-auto overflow-visible rounded-[1rem] border border-[#d1d5db] bg-[#fff] text-[#1f2937] shadow-[0_10px_30px_rgba(0,0,0,0.15)] group-hover:block group-hover:pointer-events-auto">
+              <div className="pointer-events-none absolute left-[1rem] right-[1rem] top-[calc(100%-5px)] z-[1100] hidden w-[calc(100%-2rem)] overflow-y-auto overflow-visible rounded-[1rem] border border-[#d1d5db] bg-[#fff] text-[#1f2937] shadow-[0_10px_30px_rgba(0,0,0,0.15)] group-hover:block group-hover:pointer-events-auto">
                 <div className="grid grid-cols-4 gap-[0.25rem] p-[0.75rem]">
                   <Link
                     href={`/authors/${authorList}`}
