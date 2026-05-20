@@ -13,31 +13,31 @@ const Navbar = ({ isOpen, setIsOpen }: any) => {
   const authorList = "অধ্যাপক মফিজুর রহমান";
   return (
     <div className="overflow-visible">
-      <nav className="bg-[#86bc42]/90 max-[1023px]:hidden overflow-visible">
-        <div className="container relative flex justify-between items-center text-[1.5rem] text-[#fff] px-[1rem] overflow-visible">
-          <ul className="flex items-center justify-between gap-[2.5rem] py-[.5rem] text-[1.5rem] overflow-visible">
+      <nav className="bg-[#86bc42]/90 max-[1023px]:hidden overflow-visible backdrop-blur-sm shadow-[0_8px_30px_rgba(0,0,0,0.08)]">
+        <div className="container relative flex justify-between items-center text-[1.5rem] text-[#fff] px-[1rem] py-[0.5rem] overflow-visible">
+          <ul className="flex items-center justify-between gap-[2rem]  text-[1.5rem] overflow-visible">
             <Link
               href={"/"}
-              className="text-[#fff] hover:bg-[#65a30d] rounded-full px-[1rem] py-[.5rem] transition-colors duration-300"
+              className="text-[#fff] transition-colors duration-300"
             >
-              <li className="cursor-pointer">হোম</li>
+              <li className="cursor-pointer px-[1rem] py-[0.5rem]">হোম</li>
             </Link>
             <li className="group overflow-visible">
               <Link
                 href={'/category'}
-                className="text-[#fff] hover:bg-[#65a30d] rounded-full px-[1rem] py-[.5rem] transition-colors duration-300 inline-flex items-center"
+                className="text-[#fff] px-[1rem] py-[0.5rem] transition-all duration-300 ease-out inline-flex items-center hover:shadow-md"
               >
                 ক্যাটাগরি
               </Link>
 
-              <div className="pointer-events-none absolute left-[1rem] right-[1rem] top-[calc(100%-5px)] z-[1100] hidden w-[calc(100%-2rem)] overflow-y-auto overflow-visible rounded-[1rem] border border-[#d1d5db] bg-[#fff] text-[#1f2937] shadow-[0_10px_30px_rgba(0,0,0,0.15)] group-hover:block group-hover:pointer-events-auto">
-                <div className="grid grid-cols-4 gap-[0.25rem] p-[0.75rem]">
+              <div className="absolute left-[1rem] right-[1rem] top-[calc(100%-5px)] z-[1100] hidden w-[calc(100%-2rem)] overflow-y-auto overflow-visible rounded-[1rem] bg-[#fff] text-[#1f2937] group-hover:block pointer-events-auto premium-card">
+                <div className="grid grid-cols-4 gap-2 p-[0.75rem]">
                   {categoryList.length > 0 ? (
                     categoryList.map((category: string) => (
                       <Link
                         key={category}
                         href={`/category/${encodeURIComponent(category)}`}
-                        className="block rounded-[0.75rem] px-[1rem] py-[0.8rem] text-[1.4rem] text-[#1f2937] hover:bg-[#eff6ff] transition-colors duration-200"
+                        className="block rounded-[0.75rem] px-[1rem] py-[0.8rem] text-[1.4rem] text-[#1f2937] hover:bg-[#eff6ff] transition-colors duration-200 hover:translate-y-[-2px]"
                       >
                         {category}
                       </Link>
@@ -53,13 +53,13 @@ const Navbar = ({ isOpen, setIsOpen }: any) => {
             <li className="group overflow-visible">
               <Link
                 href={'/authors'}
-                className="text-[#fff] hover:bg-[#65a30d] rounded-full px-[1rem] py-[.5rem] transition-colors duration-300 inline-flex items-center"
+                className="text-[#fff] px-[1rem] py-[0.5rem] transition-all duration-300 ease-out inline-flex items-center hover:shadow-md"
               >
                 লেখক
               </Link>
 
-              <div className="pointer-events-none absolute left-[1rem] right-[1rem] top-[calc(100%-5px)] z-[1100] hidden w-[calc(100%-2rem)] overflow-y-auto overflow-visible rounded-[1rem] border border-[#d1d5db] bg-[#fff] text-[#1f2937] shadow-[0_10px_30px_rgba(0,0,0,0.15)] group-hover:block group-hover:pointer-events-auto">
-                <div className="grid grid-cols-4 gap-[0.25rem] p-[0.75rem]">
+              <div className="absolute left-[1rem] right-[1rem] top-[calc(100%-5px)] z-[1100] hidden w-[calc(100%-2rem)] overflow-y-auto overflow-visible rounded-[1rem] bg-[#fff] text-[#1f2937] group-hover:block pointer-events-auto premium-card">
+                <div className="grid grid-cols-4 gap-2 p-[0.75rem]">
                   <Link
                     href={`/authors/${authorList}`}
                     className="block rounded-[0.75rem] px-[1rem] py-[0.8rem] text-[1.4rem] text-[#1f2937] hover:bg-[#eff6ff] transition-colors duration-200"
@@ -71,18 +71,18 @@ const Navbar = ({ isOpen, setIsOpen }: any) => {
             </li>
             {/* <Link
               href={"/authors"}
-              className="text-[#fff] hover:bg-[#65a30d] rounded-full px-[1rem] py-[.5rem] transition-colors duration-300"
+              className="text-[#fff]  transition-colors duration-300"
             >
               <li className="cursor-pointer">লেখক </li>
             </Link> */}
             <Link
               href={"/user/my-orders"}
-              className="text-[#fff] hover:bg-[#65a30d] rounded-full px-[1rem] py-[.5rem] transition-colors duration-300"
+              className="text-[#fff] px-[1rem] py-[0.5rem] transition-colors duration-300"
             >
               <li className="cursor-pointer">অর্ডার দেখুন</li>
             </Link>
           </ul>
-          <div className="flex justify-center items-center text-[1.5rem] font-[500]">
+          <div className="flex justify-center items-center text-[1.5rem] font-[600] tracking-wide">
             <div className="px-[.5rem]">
               <BsTelephone />
             </div>
@@ -94,12 +94,12 @@ const Navbar = ({ isOpen, setIsOpen }: any) => {
           </div>
         </div>
       </nav>
-
+      
       {/* Mobile Navbar */}
 
       <div
         className={`bg-[#86bc42]/90 backdrop-blur-md fixed top-0 left-0 h-[100vh] w-[250px] text-[1.6rem] p-[.5rem] transform transition-transform duration-300 ease-in-out  min-[1024px]:hidden shadow-[0_4px_10px_rgba(0,0,0,0.25)] 
-        ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
+  ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
       >
         <ul className="flex flex-col gap-[1rem]">
           <Link
